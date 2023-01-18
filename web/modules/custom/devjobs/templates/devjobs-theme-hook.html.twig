@@ -1,0 +1,62 @@
+
+        
+    <div class="relative  flex -top-[30px] ">
+        <form class="flex mx-auto" action="" method="post">  
+
+            <div class= "  dark:text-white relative flex flex-shrink  bg-white  dark:bg-[#19202D]  h-20 mx-auto items-center  rounded-md">
+
+                <div class="relative flex left-8  ">
+                    <img src="./images/Shape.png" alt="">
+                    <input class="    outline-none  h-6 ml-4 w-[271px] rounded-md border-none outline-hidden  focus:border-none focus:outline-none dark:bg-[#19202D] " type="search" value="" name="title" id="" placeholder="Filter by job name …">
+                </div>
+
+                <div class=" flex ml-[144px]">
+                    <img src="./images/location.png" alt="">
+                    <input class="  outline-none h-6 ml-4 w-[135px] rounded-md border-none outline-hidden  focus:border-none focus:outline-none dark:bg-[#19202D] "  type="search" value="" name="location" id="" placeholder="Filter by location…">
+                </div>
+
+            <div class="  relative flex  ml-[140px] h-6">
+
+                <input class="rounded-[3px]  w-6 h-6 checked:opacity-100 accent-[#939BF4] opacity-10 mix-blend-normal " type="checkbox" value="Full Time" name="box" id="">
+                <p class="dark:text-white  leading-5  text-[16px] ml-4 font-bold text-[#19202D]">Full Time Only</p>
+            </div>
+
+            <div class=" relative flex ml-7 w-[140px]">
+                <button  type="submit" value="full" name="" class="    w-[123px] h-12 rounded-md  bg-[#5964E0] hover:bg-[#939BF4] text-base font-bold text-white " >Search</button></div>
+            </div>      
+            </div>
+    </form>
+</div>
+
+
+ <div class=" min-h-screen   relative  top-20 pb-[160px] ">     
+        
+        <div class="relative ml-[165px] grid lg:grid-cols-3 gap-x-8 gap-y-10 mx-auto ">
+        {% for item in jobs %}
+            <div class="  relative flex-col w-[350px] h-[253px] ">
+                <div class="absolute bg-slate-50 shadow-slate-600 shadow-sm dark:bg-[#19202D]   w-[350px] h-[228px] top-6 rounded-md">               
+                </div>
+                <div class="w-[50px]">
+               <a href="node/{{item.nid}}"><img class="relative rounded-md left-8 max-h-[50px] max-w-[50px] w-[50px] h-[50px]" src="{{item.thumbnail}}" alt="scoop_logo"></a>
+               </div>
+                    <div class="relative mt-6 left-8 space-y-2  ">
+                        <div class="flex space-x-[12px] font-normal text-[#6E8098] text-base ">
+                            <p class="">{{ item.time }}</p>
+                            <p>{{ item.duration}}</p>
+                    
+                        </div>
+
+                        <a href="node/{{item.nid}}" ><h2 class=" overflow-hidden whitespace-nowrap text-ellipsis max-w-[250px] text-xl font-bold dark:hover:text-[#6E8098]  dark:text-white hover:text-[#6E8098] text-[#19202D] ">{{ item.job_name }}</h2></a>
+                        <p class="font-khumb text-[#19202D] max-w-[250px] text-base">{{ item.title }}</p>
+                        <p class="font-normal text-[#6E8098] max-w-[250px] text-base">{{ item.company }}</p>
+                        <br> <br>
+                        <p class="relative  overflow-hidden max-w-[250px] whitespace-nowrap text-ellipsis text-[#5964E0] font-bold text-sm" >{{ item.country }}</p>
+                </div>                
+            </div>
+                {% endfor %} 
+        </div>
+    </div>
+    <div class=" flex relative  h-24 ">
+                  <button type="button" id="loadMore" value="load_more" class=" pt-2 flex justify-center  mx-auto w-36 h-12 rounded-md bg-[#5964E0] hover:bg-[#939BF4] text-base font-bold text-white"><a href="#">Load More<a></button>
+              </div>
+

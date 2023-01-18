@@ -1,0 +1,5 @@
+name: Devjobs
+type: module
+description: "Searching jobs"
+package: custom
+core_version_requirement: ^8 || ^9 || ^10.0.0
